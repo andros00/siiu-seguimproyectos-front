@@ -1,0 +1,144 @@
+<div class="container padding-top">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Filtros de búsqueda</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+            <form [formGroup]="formBusqueda" fxLayout="row wrap" fxLayoutGap="16px">
+                <mat-form-field fxFlex="25%" appearance="outline">
+                    <mat-label>Código proyecto</mat-label>
+                    <input matInput formControlName="codigo" />
+                </mat-form-field>
+
+                <mat-form-field fxFlex="25%" appearance="outline">
+                    <mat-label>Centro de Gestión</mat-label>
+                    <mat-select formControlName="centroGestion">
+                        <mat-option value="1">Centro 1</mat-option>
+                        <mat-option value="2">Centro 2</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field fxFlex="25%" appearance="outline">
+                    <mat-label>Estado</mat-label>
+                    <mat-select formControlName="estado">
+                        <mat-option value="activo">Activo</mat-option>
+                        <mat-option value="inactivo">Inactivo</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field fxFlex="25%" appearance="outline">
+                    <mat-label>Tipo proyecto</mat-label>
+                    <mat-select formControlName="tipoProyecto">
+                        <mat-option value="investigacion">Investigación</mat-option>
+                        <mat-option value="extension">Extensión</mat-option>
+                        <mat-option value="postgrado">Postgrado</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <div fxFlex="100%" fxLayoutAlign="end center" fxLayoutGap="12px">
+                    <button mat-raised-button color="primary" (click)="consultar()">
+                        Consultar
+                    </button>
+                    <button mat-raised-button color="warn" (click)="limpiar()">
+                        Limpiar
+                    </button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="margin-top" *ngIf="dataSource.data.length > 0">
+        <mat-card-header>
+            <mat-card-title>Resultados</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%;">
+
+  <!-- Código -->
+  <ng-container matColumnDef="codigo">
+    <th mat-header-cell *matHeaderCellDef> Código </th>
+    <td mat-cell *matCellDef="let p"> {{ p.codigo }} </td>
+  </ng-container>
+
+  <!-- Proyecto -->
+  <ng-container matColumnDef="proyecto">
+    <th mat-header-cell *matHeaderCellDef> Proyecto </th>
+    <td mat-cell *matCellDef="let p"> {{ p.proyecto }} </td>
+  </ng-container>
+
+  <!-- Estado -->
+  <ng-container matColumnDef="estado">
+    <th mat-header-cell *matHeaderCellDef> Estado </th>
+    <td mat-cell *matCellDef="let p"> {{ p.estado }} </td>
+  </ng-container>
+
+  <!-- Nivel -->
+  <ng-container matColumnDef="nivel">
+    <th mat-header-cell *matHeaderCellDef> Nivel </th>
+    <td mat-cell *matCellDef="let p"> {{ p.nivel }} </td>
+  </ng-container>
+
+  <!-- Convocatoria -->
+  <ng-container matColumnDef="convocatoria">
+    <th mat-header-cell *matHeaderCellDef> Convocatoria </th>
+    <td mat-cell *matCellDef="let p"> {{ p.convocatoria }} </td>
+  </ng-container>
+
+  <!-- Proceso Selección -->
+  <ng-container matColumnDef="procesoSeleccion">
+    <th mat-header-cell *matHeaderCellDef> Proceso selección </th>
+    <td mat-cell *matCellDef="let p"> {{ p.procesoSeleccion }} </td>
+  </ng-container>
+
+  <!-- Responsable -->
+  <ng-container matColumnDef="responsable">
+    <th mat-header-cell *matHeaderCellDef> Responsable </th>
+    <td mat-cell *matCellDef="let p"> {{ p.responsable }} </td>
+  </ng-container>
+
+  <!-- IP o Coordinador -->
+  <ng-container matColumnDef="ipCoordinador">
+    <th mat-header-cell *matHeaderCellDef> IP o Coordinador </th>
+    <td mat-cell *matCellDef="let p"> {{ p.ipCoordinador }} </td>
+  </ng-container>
+
+  <!-- Tipo Proyecto -->
+  <ng-container matColumnDef="tipoProyecto">
+    <th mat-header-cell *matHeaderCellDef> Tipo Proyecto </th>
+    <td mat-cell *matCellDef="let p"> {{ p.tipoProyecto }} </td>
+  </ng-container>
+
+  <!-- Acciones -->
+  <!-- <ng-container matColumnDef="acciones">
+    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+    <td mat-cell *matCellDef="let p">
+      <button mat-icon-button [matMenuTriggerFor]="menu" color="primary">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>visibility</mat-icon>
+          <span>Ver</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>edit</mat-icon>
+          <span>Editar</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>delete</mat-icon>
+          <span>Eliminar</span>
+        </button>
+      </mat-menu>
+    </td>
+  </ng-container> -->
+
+  <!-- Filas -->
+  <tr mat-header-row *matHeaderRowDef="columnasTabla"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnasTabla"></tr>
+
+</table>
+
+        </mat-card-content>
+    </mat-card>
+</div>
