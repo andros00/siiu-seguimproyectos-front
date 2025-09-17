@@ -18,8 +18,10 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { routes } from './app.routes';
+import { MaterialModule } from './material.module';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -28,20 +30,6 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(),
     provideHttpClient(withFetch()),
     provideAnimations(),
-    importProvidersFrom(
-      CommonModule,
-      ReactiveFormsModule,
-      // Material global
-      MatFormFieldModule,
-      MatInputModule,
-      MatSelectModule,
-      MatButtonModule,
-      MatTableModule,
-      MatIconModule,
-      MatToolbarModule,
-      MatPaginatorModule,
-      MatSortModule,
-      MatCardModule
-    )
+    importProvidersFrom(MaterialModule)
   ]
 };

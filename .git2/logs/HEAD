@@ -1,4 +1,4 @@
-0000000000000000000000000000000000000000 371c884fe84810e86e4e1b701e912e3f6654119c andres.tirado <andres.tirado@udea.edu.co> 1757512625 -0500	commit (initial): initial commit
-371c884fe84810e86e4e1b701e912e3f6654119c 371c884fe84810e86e4e1b701e912e3f6654119c andres.tirado <andres.tirado@udea.edu.co> 1757516486 -0500	checkout: moving from master to master
-371c884fe84810e86e4e1b701e912e3f6654119c 371c884fe84810e86e4e1b701e912e3f6654119c andres.tirado <andres.tirado@udea.edu.co> 1758040831 -0500	checkout: moving from master to develop
-371c884fe84810e86e4e1b701e912e3f6654119c 0c3f897ca279428ddbe3466256ba1ecc7ac17405 andres.tirado <andres.tirado@udea.edu.co> 1758043272 -0500	commit: Carga de la versi´n del compañeo de la oficina y prueba de creación rama develop
+0000000000000000000000000000000000000000 12ac78ea9191fd32252bf598f7ca6814b2903944 andres.tirado <andres.tirado@udea.edu.co> 1758045550 -0500	clone: from http://gitlab.udea.red:8085/InvestigacionDlloInnovacion/siiu-seguimproyectos-front.git
+12ac78ea9191fd32252bf598f7ca6814b2903944 e2c61710407ae8f1d3dec632555a8a6f28b9acb3 andres.tirado <andres.tirado@udea.edu.co> 1758045622 -0500	checkout: moving from main to develop
+e2c61710407ae8f1d3dec632555a8a6f28b9acb3 9928a26b43a3f1cf61bc78685a0615da6febd54d andres.tirado <andres.tirado@udea.edu.co> 1758045762 -0500	commit: Cambio de estructura proyecto con deison
+9928a26b43a3f1cf61bc78685a0615da6febd54d b69cde695c932f0830a58038bda4dd0118b94674 andres.tirado <andres.tirado@udea.edu.co> 1758078631 -0500	commit: Cambios con la actualización que hizo deison

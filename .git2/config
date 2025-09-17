@@ -5,3 +5,12 @@
 	logallrefupdates = true
 	symlinks = false
 	ignorecase = true
+[remote "origin"]
+	url = http://gitlab.udea.red:8085/InvestigacionDlloInnovacion/siiu-seguimproyectos-front.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+[branch "develop"]
+	remote = origin
+	merge = refs/heads/develop

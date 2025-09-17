@@ -4,8 +4,7 @@
 
 export const environment = {
   production: true,
-//  serviceURL: 'http://localhost:8080/siiu-seguimproyectos-back/',
-  serviceURL: 'http://localhost:8080/siiusegproyback/',
+  serviceURL: 'http://localhost:8080/siiu-seguimproyectos-back/',
 };
 
 /*

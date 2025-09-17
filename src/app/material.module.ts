@@ -14,38 +14,45 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatMenuModule } from '@angular/material/menu';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
 
 @NgModule({
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    FlexLayoutModule,
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatOptionModule,
-    MatTableModule,
-    MatCardModule,
-    MatIconModule,
     MatButtonModule,
+    MatTableModule,
+    MatIconModule,
     MatToolbarModule,
     MatPaginatorModule,
     MatSortModule,
-    MatMenuModule
+    MatCardModule,
+      MatMenuModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSidenavModule   
   ],
   exports: [
     CommonModule,
+    ReactiveFormsModule,
+    FlexLayoutModule,
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatOptionModule,
-    MatTableModule,
-    MatCardModule,
-    MatIconModule,
     MatButtonModule,
+    MatTableModule,
+    MatIconModule,
     MatToolbarModule,
     MatPaginatorModule,
     MatSortModule,
-    
-    
+    MatCardModule,
   ]
 })
 export class MaterialModule {}
