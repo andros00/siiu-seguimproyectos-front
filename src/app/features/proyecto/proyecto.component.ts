@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProyectoService } from '../../services/proyecto.service';
 import { Proyecto } from '../../shared/models/proyecto';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MaterialModule } from '../../material.module';
 import { MatTableDataSource } from '@angular/material/table';
 import { EstadoProyecto } from '../../shared/models/estadoProyecto ';
@@ -13,6 +13,7 @@ import { CentroAdministrativo } from '../../shared/models/centroAdministrativo '
 import { MatPaginator } from '@angular/material/paginator';
 import { MatMenuModule } from "@angular/material/menu";
 import { MatSidenavContent, MatSidenav, MatSidenavContainer } from "@angular/material/sidenav";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-proyecto',
@@ -28,7 +29,7 @@ export class ProyectoComponent implements OnInit {
   estados: EstadoProyecto[] = [];
   tipos: TipoProyecto[] = [];
   totalRegistros = 0; 
-    mostrarFiltros = true;
+  mostrarFiltros = true;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -48,7 +49,8 @@ export class ProyectoComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private proyectoService: ProyectoService,
-    private loadingService: LoadingService
+    private loadingService: LoadingService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -64,6 +66,8 @@ export class ProyectoComponent implements OnInit {
     this.formBusqueda = this.fb.group({
       codigo: [''],
       centroGestion: [''],
+/*             centroGestion: ['', Validators.required],
+ */
       estado: [''],
       convocatoria: [''],
       procesoSeleccion: [''],
@@ -92,6 +96,9 @@ export class ProyectoComponent implements OnInit {
   }
 
   consultar(): void {
+
+/*   if (this.formBusqueda.valid) {
+ */
     const filtros: Proyecto = this.formBusqueda.value;
     this.loadingService.show();
 
@@ -107,13 +114,19 @@ export class ProyectoComponent implements OnInit {
         this.loadingService.hide();
       },
     });
-  }
+/*   }
+ */  }
 
   verDetalle() {
 }
 
-realizarInicioFormal() {
+realizarInicioFormal(proyecto: Proyecto) {
+  this.router.navigate(
+    ['tramitesAdministrativos/SeguimientoProyectos/inicioFormal'],
+    { state: { proyecto } }
+  );
 }
+
 
 toggleFiltros(): void {
   this.mostrarFiltros = !this.mostrarFiltros;

@@ -1,0 +1,62 @@
+<div fxLayout="column" fxFlexFill>
+    <mat-card>
+        <mat-card-header>
+        <mat-card-title>Proceso Inicio Formal</mat-card-title>
+
+        <div fxLayout="row" fxLayoutAlign="center center">
+                <span>{{ proyecto?.nombreCorto }}</span>
+                <br />
+                <span>{{ proyecto?.codigo }} - Estado : {{ proyecto?.estado }}</span>
+            </div>
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="formInicioFormal">
+                <div fxLayout="row" fxLayoutAlign="space-evenly start">
+                    <div fxLayout="column" fxLayoutAlign="space-evenly start">
+                        <!-- Código interno -->
+                        <mat-form-field appearance="outline">
+                            <mat-label>Código interno</mat-label>
+                            <input matInput formControlName="codigo" />
+                        </mat-form-field>
+
+                        <!-- Fechas -->
+                        <mat-form-field appearance="outline">
+                            <mat-label>Fecha de inicio</mat-label>
+                            <input matInput [matDatepicker]="pickerInicio" formControlName="fechaInicio" />
+                            <mat-datepicker-toggle matSuffix [for]="pickerInicio"></mat-datepicker-toggle>
+                            <mat-datepicker #pickerInicio></mat-datepicker>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Fecha de aprobación</mat-label>
+                            <input matInput [matDatepicker]="pickerAprob" formControlName="fechaAprobacion" />
+                            <mat-datepicker-toggle matSuffix [for]="pickerAprob"></mat-datepicker-toggle>
+                            <mat-datepicker #pickerAprob></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+
+                    <div fxLayout="column" fxLayoutAlign="space-evenly start">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Fecha de finalización</mat-label>
+                            <input matInput [matDatepicker]="pickerFin" formControlName="fechaFin" />
+                            <mat-datepicker-toggle matSuffix [for]="pickerFin"></mat-datepicker-toggle>
+                            <mat-datepicker #pickerFin></mat-datepicker>
+                        </mat-form-field>
+
+                        <!-- Duración del proyecto -->
+                        <mat-form-field appearance="outline">
+                            <mat-label>Duración del proyecto (meses)</mat-label>
+                            <input matInput type="number" formControlName="duracion" />
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <!-- Botones -->
+                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
+                    <button mat-raised-button color="primary" (click)="guardar()">Guardar</button>
+                    <button mat-raised-button color="accent" (click)="siguiente()">Siguiente</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

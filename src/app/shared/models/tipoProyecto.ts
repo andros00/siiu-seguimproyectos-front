@@ -1,4 +1,4 @@
 export interface TipoProyecto {
-identificador: string;
+  identificador: string;
   nombre: string;
 }
