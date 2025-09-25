@@ -8,10 +8,11 @@ export interface Proyecto {
   ipCoordinadorProyecto: string;
   nombreProcesoSeleccion: string;
   responsable: string;
+  nombreCompletoResponsable: string;
   tipoProyectoNombre: string;
   fechaInicioFinalizacionFormal: string;
   fechaInicioInicioFormal: string;
   duracion: number;
 
-  
+
 }
